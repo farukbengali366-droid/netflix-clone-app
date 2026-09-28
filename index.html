@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StreamFlix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="logo">StreamFlix</div>
+          <nav class="main-nav">
+            <a href="#">Home</a>
+            <a href="#">TV Shows</a>
+            <a href="#">Movies</a>
+            <a href="#">New & Popular</a>
+            <a href="#">My List</a>
+          </nav>
+        </div>
+
+        <div class="user-tools">
+          <span class="search-icon">⌕</span>
+          <input id="searchInput" type="text" placeholder="Search..." aria-label="Search movies" />
+          <button class="icon-btn">🔔</button>
+          <div class="avatar">F</div>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <p class="eyebrow">Original Movie</p>
+            <h1 id="heroTitle">The General</h1>
+            <div class="meta-row">
+              <span>1926</span>
+              <span>1h 18m</span>
+              <span>Comedy</span>
+            </div>
+            <p id="heroDescription" class="hero-description">
+              A runaway train engineer and his sweetheart become the center of a thrilling chase across the American West.
+            </p>
+            <div class="hero-actions">
+              <button class="primary-btn" id="playHeroBtn">▶ Play</button>
+              <button class="secondary-btn">＋ My List</button>
+            </div>
+          </div>
+          <div class="hero-badge">
+            <span class="badge-label">Top 10</span>
+            <span class="badge-value">#3 Today</span>
+          </div>
+        </section>
+
+        <section class="row-section">
+          <div id="movieRows"></div>
+        </section>
+      </main>
+    </div>
+
+    <div id="movieModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-backdrop" data-close="true"></div>
+      <div class="modal-content">
+        <button class="close-btn" id="closeModalBtn" aria-label="Close">×</button>
+        <div class="video-wrap">
+          <video id="moviePlayer" controls autoplay playsinline></video>
+        </div>
+        <div class="modal-info">
+          <div class="title-row">
+            <h2 id="modalTitle">Movie Title</h2>
+            <span id="modalAge" class="age-tag">PG</span>
+          </div>
+          <div class="detail-row">
+            <span id="modalYear">2024</span>
+            <span id="modalRuntime">1h 50m</span>
+            <span id="modalGenre">Action</span>
+          </div>
+          <p id="modalDescription">Movie description</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
